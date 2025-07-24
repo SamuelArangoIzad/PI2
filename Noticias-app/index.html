@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Historiador</title>
+    <link rel="icon" type="image/png" href="Images/Logo.png">
+    <link rel="stylesheet" href="styleGeneral.css">
+    <link rel="stylesheet" href="styleAge.css">
+    <link rel="stylesheet" href="styleCHATBOOT.css">
+    <link rel="stylesheet" href="styleCategory.css">
+</head>
+<body>
+
+    <!-- MODAL CONTROL DE EDAD -->
+     <div id="age-overlay" class="overlay">
+        <div class="age-modal">
+            <h2>BIENVENIDO</h2>
+            <p>Por favor, ingresa tu fecha de nacimiento</p>
+            <div class="inputs">
+                <input type="number" id="year" placeholder="Año" min="1920" max="2025">
+                <input type="number" id="month" placeholder="Mes" min="1" max="12">
+                <input type="number" id="day" placeholder="Día" min="1" max="31">
+            </div>
+            <button id="confirm-age">Ingresar</button>
+        </div>
+    </div>
+
+    <!-- BARRA -->
+    <div class="category-bar">
+        <div class="category-scroll">
+            <span class="category-item Latinoamerica">Latinoamerica</span>
+            <span class="category-item Política">Política</span>
+            <span class="category-item Cultura">Cultura</span>
+            <span class="category-item Deporte">Deporte</span>
+            <span class="category-item Finanzas">Finanzas</span>
+            <span class="category-item Educación">Educación</span>
+            <span class="category-item Economía">Economía</span>
+            <span class="category-item Ética">Ética</span>
+            <span class="category-item Tecnologia">Tecnologia</span>
+            <span class="category-item Innovación">Innovación</span>
+            <span class="category-item Universo">Universo</span>
+ 
+        </div>
+    </div>
+
+    <!-- TITULO -->
+    <header class="header">
+        
+        <div class="menu-icon" id="menu-btn">
+            &#9776; <!-- Icono de menú -->
+        </div>
+
+        <div class="logo">NOTICIAS</div>
+        <div class="header-buttons">
+            <button class="btn-subscribe">SUSCRÍBTE</button>
+            <button class="btn-login">INICIAR SESIÓN</button>
+        </div>
+    </header>
+
+    <nav id="side-menu" class="side-menu">
+        <button class="close-btn" id="close-menu">✕</button>
+        <ul>
+            <li>Latinoamérica</li>
+            <li>Política</li>
+            <li>Cultura</li>
+            <li>Deporte</li>
+            <li>Finanzas</li>
+            <li>Educación</li>
+            <li>Economía</li>
+            <li>Ética</li>
+            <li>Tecnología</li>
+            <li>Innovación</li>
+            <li>Universo</li>
+        </ul>
+    </nav>
+
+    <main id="news-container">
+        <!-- Noticias dinámicas aquí -->
+    </main>
+
+
+    <footer>
+        <p>© 2025 Noticias</p>
+    </footer>
+
+
+    <!-- BOTÓN FLOTANTE CHATBOT -->
+     <div class="chatbot-button">
+        <img src="Images/chatBOOT.png" alt="ChatBot" />
+    </div>
+
+    <!-- Ventana de ChatBot -->
+    <div class="chatbot-window" id="chatbot-window">
+        <div class="chat-header">
+            <span>Asistente Virtual</span>
+            <button id="close-chat">✕</button>
+        </div>
+
+        <div class="chat-body">
+            <p class="bot-msg">¡Hola! ¿En qué puedo ayudarte?</p>
+        </div>
+
+        <div class="chat-footer">
+            <input type="text" id="user-input" placeholder="Escribe tu mensaje...">
+            <button id="send-btn">➤</button>
+        </div>
+    </div>
+
+    <script src="controlador.js"></script>
+    <script src="controlEdad.js"></script>
+    <script src="chatbot.js"></script>
+    <script src="news.js"></script>
+
+</body>
+</html>
