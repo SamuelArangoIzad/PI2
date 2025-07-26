@@ -1,0 +1,20 @@
+1. Estructura base del proyecto cubriendo lo que se usara de una forma abstracta (posiblemente existan cambios), 
+   aún no se ha implementado nada
+   ni se ha configurado el Node +python ni la base de datos, tener en cuenta que se usara
+   Node.js + Express para el backend y Python + algoritmo de berth para el ChatBot, mysql
+   y mongoDB y html, css y js para el frontend.
+
+   La presente carpeta contiene unos archivos prueba en la ruta backend/routes/suscripciones
+   para probar el guardado de correos electronicos en formato json que luego se guardara o pasara
+   a la base de datos cuando se despliegue el proyecto. Para hacer prueba de este siga los siguientes pasos:
+
+   // EN CONSOLA O TERMINAL DE SU EQUIPO
+
+   * npm install express
+   * npm install nodemon --save-dev
+   
+   Y para lanzar o ejecutar el servidor local creado sencillamente en la terminal digite:
+
+   * node backend/routes/suscripciones.js
+
+

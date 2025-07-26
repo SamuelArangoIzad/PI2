@@ -1,3 +1,4 @@
+
 /* ----------------------------- */
 /* GENERAL */
 body {
@@ -70,7 +71,8 @@ body.loaded #age-overlay {
 }
 
 .logo {
-    font-size: 32px;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 46px;
     font-weight: 900;
     color: #004080;
     text-align: center;
