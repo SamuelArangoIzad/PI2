@@ -5,15 +5,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const cancelBtn = document.getElementById('subscribe-cancel');
     const emailInput = document.getElementById('email-input');
 
+    // Mostrar overlay al hacer clic en el botón de suscripción
     subscribeBtn.addEventListener('click', () => {
         overlay.style.display = 'flex';
     });
 
+    
+    // Cerrar overlay al hacer clic en cancelar o aceptar
     cancelBtn.addEventListener('click', () => {
         overlay.style.display = 'none';
         emailInput.value = '';
     });
 
+
+    // Enviar datos de suscripción al backend clase suscripciones.js
     acceptBtn.addEventListener('click', async () => {
         const email = emailInput.value.trim();
 

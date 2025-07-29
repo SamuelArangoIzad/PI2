@@ -1,0 +1,134 @@
+/* PANEL DE USUARIO */
+.user-panel {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f4f4f4;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header más delgado */
+.panel-header {
+    background: #333;
+    color: white;
+    padding: 10px; /* antes 15px */
+    text-align: center;
+}
+
+.panel-header h2 {
+    font-size: 18px; /* más pequeño */
+    margin: 0;
+}
+
+.panel-tabs {
+    display: flex;
+    justify-content: space-around;
+    background: #fff;
+    padding: 8px;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    font-size: 14px; /* más pequeño */
+    font-weight: bold;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.tab-btn.active {
+    color: #004080;
+    border-bottom: 2px solid #004080;
+}
+
+.panel-content {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.profile-avatar {
+    width: 120px; /* antes 150px */
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 8px;
+}
+
+/* Botón custom para subir foto */
+.upload-btn {
+    display: inline-block;
+    background: #004080;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.upload-btn:hover {
+    background: #003060;
+}
+
+/* Inputs más pequeños */
+
+#profile-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+}
+
+
+
+#profile-form input {
+    display: block;
+    width: 30%;
+    margin: 8px auto; /* margen automático para centrar */
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    text-align: center; /* opcional: texto centrado */
+    /* background-color: #f4f4f4; */
+}
+
+
+.save-btn, .return-btn {
+    background: #004080;
+    color: white;
+    border: none;
+    padding: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 6px;
+    width: 10%;
+    margin: 12px auto; /* centrar botón */
+    text-align: center;
+}
+
+.save-btn:hover, .return-btn:hover {
+    background: #003060;
+}
+
+#avatar-upload {
+    display: none; /* Oculta el input original */
+}

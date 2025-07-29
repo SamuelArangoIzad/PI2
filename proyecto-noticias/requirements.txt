@@ -17,4 +17,7 @@
 
    * node backend/routes/suscripciones.js
 
+   También use la libreria bcrypt para el manejo de contraseñas, para instalarla use, de forma local:
+   * npm install bcrypt
+
 

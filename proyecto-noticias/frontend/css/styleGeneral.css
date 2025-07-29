@@ -70,6 +70,21 @@ body.loaded #age-overlay {
     color: #004080;
 }
 
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.datetime {
+    font-size: 14px;
+    color: #666;
+    margin-top: 4px;
+    font-weight: 500;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
 .logo {
     font-family: 'Barlow Semi Condensed', sans-serif;
     font-size: 46px;
@@ -184,4 +199,59 @@ body.loaded #age-overlay {
         font-size: 14px;
         padding: 10px;
     }
+}
+
+
+
+
+
+/* ----------------------------- */
+
+/*STYLE USER WHEN LOG IT IS OKEY */
+
+.user-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    object-fit: cover;
+    border: 2px solid #004080;
+    margin-left: 15px;
+}
+
+.user-menu {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: none;
+    width: 150px;
+    z-index: 100;
+}
+
+.user-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 8px 0;
+}
+
+.user-menu li {
+    padding: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #333;
+}
+
+.user-menu li:hover {
+    background: #f4f4f4;
 }

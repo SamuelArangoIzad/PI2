@@ -1,0 +1,18 @@
+[
+  {
+    "usuario": "Ejemplo",
+    "email": "ejemplousuario@gmail.com",
+    "nombre": "Puerto3000",
+    "apellido": "LocalHost",
+    "telefono": "123456789",
+    "contrasena": "$2b$10$VTNBwK6Tex7FGTiPo69rAuqgguXupnQPK.au9j.GgnpwjlRXWg4eG"
+  },
+  {
+    "usuario": "NevoUsuario",
+    "email": "correo@electroni.com",
+    "nombre": "UPB",
+    "apellido": "Comp",
+    "telefono": "utacio",
+    "contrasena": "$2b$10$q8c9OnM22OdQZsGSNbPDx.ocrGhcgZnNiJVEdbS39SLwyK9acti8G"
+  }
+]
