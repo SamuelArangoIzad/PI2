@@ -230,8 +230,8 @@ body.loaded #age-overlay {
     position: absolute;
     top: 50px;
     right: 0;
-    background: #fff;
-    border: 1px solid #ddd;
+    background: #dadada;
+    border: 1px solid #000000;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     display: none;

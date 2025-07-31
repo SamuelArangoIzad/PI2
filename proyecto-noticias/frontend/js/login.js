@@ -92,14 +92,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 userAvatar.onclick = () => {
                     userMenu.style.display = (userMenu.style.display === 'block') ? 'none' : 'block';
                 };
-
-
                 
                 // EDITAR PERFIL
                 editProfileBtn.addEventListener('click' , () =>{
 
                     //AQUÍ OCURRE LA MAGIA DE LA PERSONALIZACIÓN DEL PERFIL
 
+                    document.getElementById("close-panel").addEventListener("click", function () {
+                        document.getElementById("user-panel").style.display = "none";
+                    });
+                    
                     userMenu.style.display = 'none'; // Ocultar el menú al editar perfil
                     document.getElementById('user-panel').style.display = 'flex'; // Mostrar el panel de usuario
 
@@ -111,8 +113,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     document.getElementById('edit-telefono').value = currentUser.telefono || '';
 
                 });
-
-
 
                 // CAMBIO DE TABS
                 document.querySelectorAll('.tab-btn').forEach(btn => {
@@ -134,13 +134,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
 
-
                 // TABS
 
                 document.getElementById('return-btn').addEventListener('click' , () => {
                     document.getElementById('user-panel').style.display = 'none'; // Ocultar el panel de usuario
                 });
-
 
 
                 //CAMBIO DE AVATAR PREVISUALIZACIÓN
@@ -168,7 +166,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     alert('CAMBIOS GUARDADOS, FALTA EL BACKEND.'); // Simulación de guardado
                 });
-
 
 
                 //CERRAR LA SESIÓN
