@@ -8,65 +8,55 @@ document.addEventListener('DOMContentLoaded', () => {
     const userMenu = document.getElementById('user-menu');
     const logoutBtn = document.getElementById('logout-btn');
     const editProfileBtn = document.getElementById('edit-profile');
-    
+    const closePanelBtn = document.getElementById('close-panel');
+    const userPanel = document.getElementById('user-panel');
 
-    // Mostrar modal
+    let currentUser = {};
+
+    // Mostrar modal login
     loginBtn.addEventListener('click', () => {
         loginOverlay.style.display = 'flex';
     });
 
-    // Cerrar modal
+    // Cerrar modal login
     loginCancel.addEventListener('click', () => {
         loginOverlay.style.display = 'none';
         clearLoginForm();
     });
 
+    // Botón cerrar panel (X)
+    if (closePanelBtn) {
+        closePanelBtn.addEventListener('click', () => {
+            userPanel.style.display = 'none';
+        });
+    }
 
 
-    // let permite reasignación y const no permite reasignación
-    // Variable para almacenar el usuario actual
-    // Esto permite que el usuario actual se mantenga en la sesión
-
-    let currentUser = {};
-
-
-    // Acción al dar clic en "Ingresar" envía el fronted de datos al backend a la clase entrada.js
+    // Login
     loginAccept.addEventListener('click', async () => {
-
-
         const usuario = document.getElementById('username').value.trim();
         const contrasena = document.getElementById('password').value.trim();
-
-
 
         if (!usuario || !contrasena) {
             alert('Por favor ingresa usuario y contraseña.');
             return;
         }
 
-
-
         try {
-
-
             const response = await fetch('/api/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ usuario, contrasena })
             });
 
-
-
             const data = await response.json();
 
-
-
             if (response.ok) {
-                // Login exitoso
+                //LOgin exitoso
                 alert(data.message);
 
-                // GUARDAR EL USUARIO GLOBALMENTE DE LA SESIÓN
 
+                //GUARDAR EL USUARIO GLOBALMENTE EN LA SESIÓN
                 currentUser = {
                     usuario: data.usuario,
                     email: data.email,
@@ -75,46 +65,36 @@ document.addEventListener('DOMContentLoaded', () => {
                     telefono: data.telefono
                 };
 
-
-                //OCULTAR LOGIN MODAL Y BOTON
+                //OCULTAR MODAL LOGIN Y BOTON
                 loginOverlay.style.display = 'none';
                 loginBtn.style.display = 'none';
 
                 //MOSTRAR AVATAR
-
                 userSection.style.display = 'flex';
-                userAvatar.src = './assets/userIconDefault.png'; // Aquí puedes cambiar la imagen del avatar si es necesario
-                // de forma dinamica
+                userAvatar.src = './assets/userIconDefault.png';
 
                 clearLoginForm();
 
-                // TOGGLE MENU DESPLEGABLE
+                // Toggle menú
                 userAvatar.onclick = () => {
                     userMenu.style.display = (userMenu.style.display === 'block') ? 'none' : 'block';
                 };
-                
-                // EDITAR PERFIL
-                editProfileBtn.addEventListener('click' , () =>{
 
-                    //AQUÍ OCURRE LA MAGIA DE LA PERSONALIZACIÓN DEL PERFIL
+                // Editar perfil
+                editProfileBtn.addEventListener('click', () => {
 
-                    document.getElementById("close-panel").addEventListener("click", function () {
-                        document.getElementById("user-panel").style.display = "none";
-                    });
-                    
                     userMenu.style.display = 'none'; // Ocultar el menú al editar perfil
                     document.getElementById('user-panel').style.display = 'flex'; // Mostrar el panel de usuario
 
-                    //LLENAR CAMPOS CON DATOS ACTUALES
-                    document.getElementById('edit-username').value = currentUser.usuario || ''; // Asignar el nombre de usuario actual
+                    document.getElementById('edit-username').value = currentUser.usuario || '';
                     document.getElementById('edit-email').value = currentUser.email || '';
                     document.getElementById('edit-nombre').value = currentUser.nombre || '';
                     document.getElementById('edit-apellido').value = currentUser.apellido || '';
                     document.getElementById('edit-telefono').value = currentUser.telefono || '';
-
                 });
 
-                // CAMBIO DE TABS
+
+                //cambio de tabs
                 document.querySelectorAll('.tab-btn').forEach(btn => {
 
                     btn.addEventListener('click', () => {
@@ -133,42 +113,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 });
 
-
-                // TABS
-
-                document.getElementById('return-btn').addEventListener('click' , () => {
-                    document.getElementById('user-panel').style.display = 'none'; // Ocultar el panel de usuario
-                });
-
-
-                //CAMBIO DE AVATAR PREVISUALIZACIÓN
+                //visualización de avatar
                 document.getElementById('avatar-upload').addEventListener('change', (e) => {
 
-                    const file = e.target.files[0];
+                    const file = e.target.file[0];
 
                     if(file){
+
                         const reader = new FileReader();
+
                         reader.onload = () => {
+
                             document.getElementById('profile-avatar').src = reader.result;
                         };
 
                         reader.readAsDataURL(file);
+
                     }
 
                 });
 
-
-                // GUARDAR CAMBIOS SIMULADO FALTA EL BAKCKEND
+                //Guardar cambios
 
                 document.getElementById('profile-form').addEventListener('submit',(e) => {
 
                     e.preventDefault();
 
-                    alert('CAMBIOS GUARDADOS, FALTA EL BACKEND.'); // Simulación de guardado
+                    alert('Cambios guardados, falta el backend');
+
                 });
 
 
-                //CERRAR LA SESIÓN
                 logoutBtn.onclick = () => {
                     logoutUser();
                 };
@@ -178,26 +153,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert(data.error);
             }
 
-        } catch (error) {
+        } 
+        
+        
+        
+        catch (error) {
             console.error('Error en login:', error);
         }
+
+
     });
 
-
-    //LIMPIAR CAMPOS DEL LOGIN
     function clearLoginForm() {
         document.getElementById('username').value = '';
         document.getElementById('password').value = '';
     }
 
-
-    //FUNCIÓN PARA CERRAR SESIÓN COMPLETAMENTE
-    function logoutUser(){
+    function logoutUser() {
         userSection.style.display = 'none';
         loginBtn.style.display = 'inline-block';
         userMenu.style.display = 'none';
-        clearLoginForm();
+        userPanel.style.display = 'none';
+        currentUser = {};
         alert('Has cerrado sesión correctamente.');
     }
-    
 });

@@ -69,7 +69,7 @@
         
         
         <div class="header-buttons">
-            <button class="btn-subscribe">SUSCRÍBETE</button>
+            <button class="btn-subscribe">SUSCRÍBTE</button>
             <button class="btn-login">INICIAR SESIÓN</button>
 
             <!-- AVATAR USER AND MENU-->
@@ -226,56 +226,78 @@
 
         </div>
       </div>
+      
 
 
-<!-- PANEL DE USUARIO MODERNO -->
-<div id="user-panel" class="user-panel" style="display: none;">
-  <div class="panel-container">
+      
+      <!-- PANEL DE USUARIO  -->
+    
+      <div id="user-panel" class="user-panel" style="display: none;">
 
-    <!-- Botón de cierre fuera del encabezado para posición fija -->
-    <button id="close-panel" class="close-btn" title="Cerrar">×</button>
+        <div class="panel-container"> 
 
-    <div class="panel-header">
-      <h2>Mi Cuenta</h2>
+            <!-- Botón de cierre fuera del encabezado para posición fija -->
+             <button id="close-panel" class="close-btn" title="Cerrar">×</button>
+
+             <div class="panel-header">
+                <h2>Mi Cuenta</h2>
+            </div>
+            
+            <div class="panel-tabs">
+                <button class="tab-btn active" data-tab="profile-tab">Editar Perfil</button>
+                <button class="tab-btn" data-tab="favorites-tab">Favoritos</button>
+            </div>
+            
+            
+            <div class="panel-content">
+                
+                <!-- PERFIL -->
+                 
+                <div id="profile-tab" class="tab-content active">
+                    
+                    <h3>Editar Perfil</h3>
+                    
+                    <div class="profile-section">
+                        
+                        <img id="profile-avatar" src="./assets/userIconDefault.png" alt="Avatar" class="profile-avatar">
+                        <label for="avatar-upload" class="upload-btn">Cambiar foto</label>
+                        
+                        <input type="file" id="avatar-upload" accept="image/*">
+                    
+                    </div>
+
+                    
+                    <form id="profile-form">
+
+                        <input type="text" id="edit-username" placeholder="Usuario" required>
+                        <input type="email" id="edit-email" placeholder="Correo electrónico" required>
+                        <input type="text" id="edit-nombre" placeholder="Nombre" required>
+                        <input type="text" id="edit-apellido" placeholder="Apellido" required>
+                        <input type="tel" id="edit-telefono" placeholder="Teléfono" required>
+                        
+                        <button type="submit" class="action-btn save-btn">Guardar Cambios</button>
+                    </form>
+                </div>
+
+                
+                <!-- FAVORITOS -->
+                 
+                <div id="favorites-tab" class="tab-content">
+                    
+                    <h3>Noticias Favoritas</h3>
+                    <p class="info-text">Aquí aparecerán tus noticias favoritas (Próximamente).</p>
+                    
+                </div>
+             </div>
+         </div>
     </div>
 
-    <div class="panel-tabs">
-      <button class="tab-btn active" data-tab="profile-tab">Editar Perfil</button>
-      <button class="tab-btn" data-tab="favorites-tab">Favoritos</button>
-    </div>
-
-    <div class="panel-content">
-      <!-- PERFIL -->
-      <div id="profile-tab" class="tab-content active">
-        <h3>Editar Perfil</h3>
-        <div class="profile-section">
-          <img id="profile-avatar" src="./assets/userIconDefault.png" alt="Avatar" class="profile-avatar">
-          <label for="avatar-upload" class="upload-btn">Cambiar foto</label>
-          <input type="file" id="avatar-upload" accept="image/*">
-        </div>
-
-        <form id="profile-form">
-          <input type="text" id="edit-username" placeholder="Usuario" required>
-          <input type="email" id="edit-email" placeholder="Correo electrónico" required>
-          <input type="text" id="edit-nombre" placeholder="Nombre" required>
-          <input type="text" id="edit-apellido" placeholder="Apellido" required>
-          <input type="tel" id="edit-telefono" placeholder="Teléfono" required>
-          <button type="submit" class="action-btn save-btn">Guardar Cambios</button>
-        </form>
-      </div>
-
-      <!-- FAVORITOS -->
-      <div id="favorites-tab" class="tab-content">
-        <h3>Noticias Favoritas</h3>
-        <p class="info-text">Aquí aparecerán tus noticias favoritas (Próximamente).</p>
-      </div>
-
-    </div>
-  </div>
-</div>
 
 
 
+
+
+    
     <script src="./js/controlador.js"></script>
     <script src="./js/controlEdad.js"></script>
     <script src="./js/chatbot.js"></script>
