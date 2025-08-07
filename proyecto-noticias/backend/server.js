@@ -34,6 +34,7 @@ app.use(registroRoute);
 app.use(suscripcionesRoute);
 app.use(loginRoutes);
 
+
 // Serve the main frontend page on root path
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/index.html'));

@@ -14,5 +14,21 @@
     "apellido": "Comp",
     "telefono": "utacio",
     "contrasena": "$2b$10$q8c9OnM22OdQZsGSNbPDx.ocrGhcgZnNiJVEdbS39SLwyK9acti8G"
+  },
+  {
+    "usuario": "NuevoUSuario",
+    "email": "ejemplodeusuario@gmail.com",
+    "nombre": "Ejemplito",
+    "apellido": "hola",
+    "telefono": "123412421",
+    "contrasena": "$2b$10$tGlMoTwXycnVJgqV.qu9xeODi9FYmVeHRNiUebemmK8UZSMeCClwu"
+  },
+  {
+    "usuario": "adsad",
+    "email": "dwqdwq@gmail.com",
+    "nombre": "Ejemplito",
+    "apellido": "hola",
+    "telefono": "123",
+    "contrasena": "$2b$10$ULkPqnlFT.CyJK1X2VoeNObewt2L3bxvs5ZS9SQ2UvwQsFomQcHTa"
   }
 ]

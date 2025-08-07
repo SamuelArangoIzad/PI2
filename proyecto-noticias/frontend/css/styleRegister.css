@@ -124,3 +124,28 @@
     height: 16px;
     cursor: pointer;
 }
+
+.terms-container {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.terms-container input[type="checkbox"] {
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.terms-container a {
+    color: #004080;
+    text-decoration: underline;
+}
+
+.terms-container a:hover {
+    color: #00264d;
+}
