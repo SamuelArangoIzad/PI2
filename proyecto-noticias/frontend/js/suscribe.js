@@ -10,20 +10,18 @@ document.addEventListener('DOMContentLoaded', () => {
         overlay.style.display = 'flex';
     });
 
-    
-    // Cerrar overlay al hacer clic en cancelar o aceptar
+    // Cerrar overlay al hacer clic en cancelar
     cancelBtn.addEventListener('click', () => {
         overlay.style.display = 'none';
         emailInput.value = '';
     });
 
-
-    // Enviar datos de suscripción al backend clase suscripciones.js
+    // Enviar datos de suscripción al backend
     acceptBtn.addEventListener('click', async () => {
         const email = emailInput.value.trim();
 
         if (!email || !email.includes('@')) {
-            alert('Por favor ingresa un correo válido.');
+            showNotification('Por favor ingresa un correo válido.', 'error');
             return;
         }
 
@@ -35,16 +33,29 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             const result = await response.json();
+
             if (response.ok) {
-                alert('¡Gracias por suscribirte!');
-                overlay.style.display = 'none';
-                emailInput.value = '';
+
+
+
+                showNotification('¡Gracias por suscribirte!');
+
+                //tiempo para cerrar el modal
+                setTimeout(() => {
+
+                    overlay.style.direction= 'none';
+                    emailInput.value = '';
+                    
+                }, 3000);
+
+
+
             } else {
-                alert(result.error || 'Error al suscribirse');
+                showNotification(result.error || 'Error al suscribirse', 'error');
             }
         } catch (error) {
             console.error('Error en la solicitud:', error);
-            alert('Error en el servidor.');
+            showNotification('Error en el servidor.', 'error');
         }
     });
 });

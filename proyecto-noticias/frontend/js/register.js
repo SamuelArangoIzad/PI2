@@ -43,9 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-
-
-
     // Enviar datos de registro al backend clase registro.js
     btnRegister.addEventListener('click', async () => {
         const usuario = document.getElementById('reg-username').value.trim();
@@ -56,14 +53,24 @@ document.addEventListener('DOMContentLoaded', () => {
         const contrasena = document.getElementById('reg-password').value.trim();
         const confirmarContrasena = document.getElementById('reg-confirm-password').value.trim();
 
+
+        const modalSelector = '.register-modal';
+
         // Validaciones simples
         if (!usuario || !email || !nombre || !apellido || !telefono || !contrasena || !confirmarContrasena) {
-            alert('Por favor completa todos los campos.');
+            showNotification('Por favor completa todos los campos.', 'error', modalSelector);
             return;
         }
 
         if (contrasena !== confirmarContrasena) {
-            alert('Las contraseñas no coinciden.');
+            showNotification('Las contraseñas no coinciden.', 'error', modalSelector);
+            return;
+        }
+
+        const aceptoTerminos = document.getElementById('accept-terms').checked;
+
+        if(!aceptoTerminos){
+            showNotification('Debes aceptar los términos y condiciones.' , 'error', modalSelector);
             return;
         }
 
@@ -77,14 +84,41 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = await response.json();
 
             if (response.ok) {
-                alert(data.message);
-                registerOverlay.style.display = 'none';
+                showNotification(data.message || 'Registro exitoso', 'success', modalSelector);
+
+                
+
+                //TIEMPO 
+                setTimeout(() => {
+                    registerOverlay.style.display = 'none';
+                }, 3000);
+
+                //limpiar campos
+                clearRegisterForm();
+
             } else {
-                alert(data.error);
+                showNotification(data.error || 'Error en el registro', 'error', modalSelector);
             }
         } catch (error) {
-            console.error('Error en la solicitud:', error);
+            showNotification('Error al conectar con el servidor.', 'error', modalSelector);
         }
     });
 
 });
+
+
+// Función para limpiar el formulario
+function clearRegisterForm() {
+    document.getElementById('reg-username').value = '';
+    document.getElementById('reg-email').value = '';
+    document.getElementById('reg-firstname').value = '';
+    document.getElementById('reg-lastname').value = '';
+    document.getElementById('reg-phone').value = '';
+    document.getElementById('reg-password').value = '';
+    document.getElementById('reg-confirm-password').value = '';
+    document.getElementById('toggle-passwords').checked = false;
+
+    // Asegurarse que los campos vuelvan a tipo password
+    document.getElementById('reg-password').type = 'password';
+    document.getElementById('reg-confirm-password').type = 'password';
+}

@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closePanelBtn = document.getElementById('close-panel');
     const userPanel = document.getElementById('user-panel');
 
+    const modalSelector = '.login-modal'
     let currentUser = {};
 
     // Mostrar modal login
@@ -38,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const contrasena = document.getElementById('password').value.trim();
 
         if (!usuario || !contrasena) {
-            alert('Por favor ingresa usuario y contraseña.');
+            showNotification('Por favor ingresa usuario y contraseña.', 'error', modalSelector);
             return;
         }
 
@@ -53,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (response.ok) {
                 //LOgin exitoso
-                alert(data.message);
+                showNotification(data.message || 'Inicio de sesión exitoso', 'success', modalSelector);
 
 
                 //GUARDAR EL USUARIO GLOBALMENTE EN LA SESIÓN
@@ -139,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     e.preventDefault();
 
-                    alert('Cambios guardados, falta el backend');
+                    showNotification('Cambios guardados (falta backend)', 'info', modalSelector);
 
                 });
 
@@ -150,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
             } else {
-                alert(data.error);
+                showNotification(data.error || 'Error en el inicio de sesión', 'error', modalSelector);
             }
 
         } 
@@ -159,6 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         catch (error) {
             console.error('Error en login:', error);
+            showNotification('Error al conectar con el servidor.', 'error', modalSelector);
         }
 
 
@@ -175,6 +177,6 @@ document.addEventListener('DOMContentLoaded', () => {
         userMenu.style.display = 'none';
         userPanel.style.display = 'none';
         currentUser = {};
-        alert('Has cerrado sesión correctamente.');
+        showNotification('Has cerrado sesión correctamente.', 'success', modalSelector);
     }
 });

@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="./css/styleLogin.css">
     <link rel="stylesheet" href="./css/styleRegister.css">
     <link rel="stylesheet" href="./css/editProfileMenu.css">
+    <link rel="stylesheet" href="./css/notifier.css">
 
     
 </head>
@@ -219,6 +220,17 @@
                 <label for="toggle-passwords">Mostrar contraseñas</label>
             </div>
 
+            <div class="terms-container">
+                <input type="checkbox" id="accept-terms">
+
+                <label for="accept-terms">
+                    Acepto los <a href="./assets/TérminosCondiciones.pdf" target="_blank">Términos y Condiciones</a>
+                </label>
+
+            </div>
+
+
+
             <div class="register-buttons">
                 <button id="register-accept">Registrarse</button>
                 <button id="register-cancel">Cancelar</button>
@@ -296,6 +308,11 @@
 
 
 
+    <!-- NOTIFICACIONES -->
+     <div id="notifier"></div>
+
+
+
 
     
     <script src="./js/controlador.js"></script>
@@ -306,6 +323,7 @@
     <script src="./js/login.js"></script>
     <script src="./js/register.js"></script>
     <script src="./js/clock.js"></script>
+    <script src="./js/notifier.js"></script>
 
 </body>
 </html>
