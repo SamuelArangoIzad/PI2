@@ -1,6 +1,6 @@
-/* Footer del menú lateral */
+/* Side menu footer */
 .side-footer {
-    margin-top: auto; /* Empuja hacia el fondo */
+    margin-top: auto; /* Pushes to the bottom */
     text-align: center;
     padding-top: 20px;
     border-top: 1px solid #ddd;
@@ -37,7 +37,7 @@
     text-decoration: underline;
 }
 
-/* Responsive ajustes */
+/* Responsive adjustments */
 @media (max-width: 480px) {
     .social-icon {
         width: 28px;

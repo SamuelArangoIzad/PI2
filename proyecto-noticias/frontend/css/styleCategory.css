@@ -1,8 +1,8 @@
-/* Menú lateral */
+/* Side menu */
 .side-menu {
     position: fixed;
     top: 0;
-    left: -100%; /* Oculto completamente */
+    left: -100%; /* Completely hidden */
     width: 280px;
     height: 100%;
     background: #fff;
@@ -16,7 +16,7 @@
 
 
 .side-menu.open {
-    left: 0; /* Aparece */
+    left: 0; /* Appears */
 }
 
 .side-menu .close-btn {
@@ -59,7 +59,7 @@
 .menu-title {
     font-size: 20px;
     font-weight: bold;
-    color: #004080; /* Azul corporativo */
+    color: #004080; /* Corporate blue */
     margin-bottom: 15px;
     text-transform: uppercase;
     text-align: center;

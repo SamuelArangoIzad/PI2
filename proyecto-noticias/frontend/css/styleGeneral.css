@@ -1,19 +1,19 @@
 
 /* ----------------------------- */
-/* GENERAL */
+/* GENERAL STYLES */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     background: #f4f4f4;
 }
 
-/* Ocultar el contenido principal hasta confirmar */
+/* Hide main content until age is confirmed */
 body.loaded #age-overlay {
     display: none;
 }
 
 /* ----------------------------- */
-/* CATEGORY BAR */
+/* CATEGORY BAR: Horizontal scrolling bar for news categories */
 .category-bar {
     background-color: #333;
     overflow: hidden;
@@ -25,7 +25,7 @@ body.loaded #age-overlay {
 
 .category-scroll {
     display: inline-block;
-    animation: ticker 30s linear infinite;
+    animation: ticker 30s linear infinite; /* Infinite scroll animation for categories */
     padding-left: 100%;
 }
 
@@ -35,25 +35,27 @@ body.loaded #age-overlay {
     padding: 8px 20px;
     margin: 0 10px;
     font-size: 16px;
+    /* Individual category style */
 }
 
 .category-item:not(:last-child):after {
     content: "•";
     margin-left: 10px;
-    color: #666;
+    color: #666; /* Separator dot between categories */
 }
 
 @keyframes ticker {
     0% { transform: translateX(0); }
     100% { transform: translateX(-100%); }
+    /* Animation for scrolling categories */
 }
 
 .category-item:hover {
-    color: #4CAF50;
+    color: #4CAF50; /* Highlight on hover */
 }
 
 /* ----------------------------- */
-/* HEADER */
+/* HEADER: Top navigation and logo area */
 .header {
     display: flex;
     justify-content: space-between;
@@ -92,6 +94,7 @@ body.loaded #age-overlay {
     color: #004080;
     text-align: center;
     flex: 1;
+    /* Main logo style */
 }
 
 .header-buttons {
@@ -111,6 +114,7 @@ body.loaded #age-overlay {
     background: #28a745;
     color: white;
     border: none;
+    /* Subscribe button style */
 }
 
 .btn-subscribe:hover {
@@ -121,6 +125,7 @@ body.loaded #age-overlay {
     background: white;
     color: #004080;
     border: 2px solid #004080;
+    /* Login button style */
 }
 
 .btn-login:hover {
@@ -128,7 +133,7 @@ body.loaded #age-overlay {
 }
 
 /* ----------------------------- */
-/* NEWS GRID */
+/* NEWS GRID: Responsive grid for news cards */
 #news-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -141,25 +146,29 @@ body.loaded #age-overlay {
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    /* Individual news card style */
 }
 
 .news-card img {
     width: 100%;
     border-radius: 10px;
+    /* News image style */
 }
 
 .news-card h2 {
     font-size: 18px;
     margin: 10px 0;
+    /* News title style */
 }
 
 .news-card p {
     font-size: 14px;
     color: #555;
+    /* News description style */
 }
 
 /* ----------------------------- */
-/* RESPONSIVE AJUSTES */
+/* RESPONSIVE ADJUSTMENTS: For tablets and small screens */
 @media (max-width: 768px) {
     .header {
         flex-direction: column;
@@ -199,6 +208,7 @@ body.loaded #age-overlay {
         font-size: 14px;
         padding: 10px;
     }
+    /* Mobile adjustments */
 }
 
 
@@ -207,7 +217,7 @@ body.loaded #age-overlay {
 
 /* ----------------------------- */
 
-/*STYLE USER WHEN LOG IT IS OKEY */
+/* USER SECTION: Styles for logged-in user avatar and menu */
 
 .user-section {
     position: relative;

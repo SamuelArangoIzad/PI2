@@ -10,7 +10,7 @@
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    padding: 15px; /* Evita que pegue en los bordes en pantallas pequeñas */
+    padding: 15px; /* Prevents sticking to edges on small screens */
     box-sizing: border-box;
 }
 
@@ -38,12 +38,12 @@
     margin-bottom: 20px;
 }
 
-/* Botones */
+/* Buttons */
 .buttons {
     display: flex;
     justify-content: space-between;
     gap: 15px;
-    flex-wrap: wrap; /* Si no caben, bajan */
+    flex-wrap: wrap; /* If buttons don't fit, they wrap to next line */
 }
 
 .buttons button {
@@ -58,7 +58,7 @@
     transition: 0.3s ease;
 }
 
-/* Botón Sí */
+/* Yes Button */
 #btn-yes {
     background: #004080;
     color: #fff;
@@ -68,7 +68,7 @@
     background: #003366;
 }
 
-/* Botón No */
+/* No Button */
 #btn-no {
     background: #ccc;
     color: #333;
@@ -78,7 +78,7 @@
     background: #999;
 }
 
-/* Animación */
+/* Animation: Fade in effect for modal */
 @keyframes fadeIn {
     from { opacity: 0; transform: scale(0.9); }
     to { opacity: 1; transform: scale(1); }
@@ -86,7 +86,7 @@
 
 /* ------------------------- */
 /* MEDIA QUERIES */
-/* Teléfonos pequeños */
+/* Small phones */
 
 @media (max-width: 480px) {
     .age-modal {
@@ -102,7 +102,7 @@
     }
 
     .buttons {
-        flex-direction: column; /* Botones uno debajo del otro */
+        flex-direction: column; /* Stack buttons vertically */
     }
 
     .buttons button {

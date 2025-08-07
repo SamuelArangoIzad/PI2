@@ -1,29 +1,35 @@
+/**
+ * Subscribe Controller
+ *
+ * Handles the subscription modal logic, including opening, closing, and sending subscription data to the backend.
+ */
 document.addEventListener('DOMContentLoaded', () => {
+    // Get DOM elements for subscribe button, overlay, accept/cancel buttons, and email input
     const subscribeBtn = document.querySelector('.btn-subscribe');
     const overlay = document.getElementById('subscribe-overlay');
     const acceptBtn = document.getElementById('subscribe-accept');
     const cancelBtn = document.getElementById('subscribe-cancel');
     const emailInput = document.getElementById('email-input');
 
-    // Mostrar overlay al hacer clic en el botón de suscripción
+    // Show overlay when subscribe button is clicked
     subscribeBtn.addEventListener('click', () => {
         overlay.style.display = 'flex';
     });
 
     
-    // Cerrar overlay al hacer clic en cancelar o aceptar
+    // Close overlay when cancel button is clicked
     cancelBtn.addEventListener('click', () => {
         overlay.style.display = 'none';
         emailInput.value = '';
     });
 
 
-    // Enviar datos de suscripción al backend clase suscripciones.js
+    // Send subscription data to backend (suscripciones.js)
     acceptBtn.addEventListener('click', async () => {
         const email = emailInput.value.trim();
 
         if (!email || !email.includes('@')) {
-            alert('Por favor ingresa un correo válido.');
+            alert('Please enter a valid email.');
             return;
         }
 
@@ -36,15 +42,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const result = await response.json();
             if (response.ok) {
-                alert('¡Gracias por suscribirte!');
+                alert('Thank you for subscribing!');
                 overlay.style.display = 'none';
                 emailInput.value = '';
             } else {
-                alert(result.error || 'Error al suscribirse');
+                alert(result.error || 'Subscription error');
             }
         } catch (error) {
-            console.error('Error en la solicitud:', error);
-            alert('Error en el servidor.');
+            console.error('Request error:', error);
+            alert('Server error.');
         }
     });
 });

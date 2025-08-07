@@ -1,9 +1,9 @@
-/* Botón flotante ChatBot */
+/* Floating ChatBot button */
 .chatbot-button {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 70px; /* Tamaño reducido */
+    width: 70px; /* Reduced size */
     height: 70px;
     border-radius: 50%;
     background: white;
@@ -28,10 +28,10 @@
 
 
 
-/* STYLE WINDOW CHAT */
+/* CHAT WINDOW STYLES */
 
 
-/* Ventana del ChatBot */
+/* ChatBot window */
 .chatbot-window {
     position: fixed;
     bottom: 100px;
@@ -41,20 +41,20 @@
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    display: none; /* Oculta por defecto */
+    display: none; /* Hidden by default */
     flex-direction: column;
     overflow: hidden;
     z-index: 10001;
     animation: fadeIn 0.3s ease;
 }
 
-/* Animación */
+/* Animation for chat window appearance */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Encabezado del chat */
+/* Chat header */
 .chat-header {
     background: #004080;
     color: #fff;
@@ -73,7 +73,7 @@
     cursor: pointer;
 }
 
-/* Cuerpo del chat */
+/* Chat body: message area */
 .chat-body {
     flex: 1;
     padding: 10px;
@@ -82,7 +82,7 @@
     color: #333;
 }
 
-/* Pie con input */
+/* Chat footer: input and send button */
 .chat-footer {
     display: flex;
     border-top: 1px solid #ddd;
@@ -109,7 +109,7 @@
     background: #003366;
 }
 
-/* Mensajes */
+/* Bot message bubble */
 .bot-msg {
     background: #f1f1f1;
     padding: 8px;
@@ -117,5 +117,6 @@
     margin-bottom: 8px;
     display: inline-block;
     max-width: 80%;
+
 }
 

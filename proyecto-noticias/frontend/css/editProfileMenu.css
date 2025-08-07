@@ -34,6 +34,14 @@
   font-size: 24px;
   color: #fff;
   cursor: pointer;
+/*
+ * Edit Profile Menu Stylesheet
+ * This CSS file styles the user profile editing modal, including layout, tabs, avatar, form, and buttons.
+ */
+
+/* =========================
+   GENERAL CONTAINER
+   ========================= */
   z-index: 10;
   transition: transform 0.2s ease-in-out;
 }
@@ -47,6 +55,9 @@
 .panel-header {
   background: #004080;
   color: white;
+/* =========================
+   PANEL CONTAINER
+   ========================= */
   padding: 20px;
   text-align: center;
 }
@@ -58,6 +69,9 @@
 
 /* TABS */
 .panel-tabs {
+/* =========================
+   CLOSE BUTTON (X)
+   ========================= */
   display: flex;
   border-bottom: 1px solid #eee;
   background: #f9f9f9;
@@ -75,6 +89,9 @@
 
 .tab-btn:hover {
   background: #e8f0ff;
+/* =========================
+   HEADER
+   ========================= */
 }
 
 .tab-btn.active {
@@ -87,6 +104,9 @@
 .panel-content {
   padding: 20px;
   max-height: 70vh;
+/* =========================
+   TABS
+   ========================= */
   overflow-y: auto;
 }
 
@@ -113,12 +133,18 @@
 .profile-avatar {
   width: 100px;
   height: 100px;
+/* =========================
+   PANEL CONTENT
+   ========================= */
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #004080;
   margin-bottom: 10px;
 }
 
+/* =========================
+   TABS CONTENT
+   ========================= */
 .upload-btn {
   background: #004080;
   color: white;
@@ -127,6 +153,9 @@
   cursor: pointer;
   font-size: 14px;
   transition: background 0.3s;
+/* =========================
+   PROFILE AVATAR & PHOTO
+   ========================= */
 }
 
 
@@ -162,6 +191,9 @@
   padding: 10px;
   border-radius: 8px;
   cursor: pointer;
+/* =========================
+   PROFILE FORM
+   ========================= */
   font-size: 14px;
   transition: background 0.3s;
 }
@@ -177,6 +209,9 @@
 }
 
 /* BOTÓN DE CIERRE */
+/* =========================
+   ACTION BUTTONS
+   ========================= */
 .close-btn {
   position: absolute;
   top: 12px;
@@ -192,11 +227,17 @@
 .close-btn:hover {
   transform: scale(1.2);
 }
+/* =========================
+   INFO TEXT
+   ========================= */
 
 
 /* ANIMACIÓN */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+/* =========================
+   ANIMATION
+   ========================= */
 }
 

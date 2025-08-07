@@ -1,4 +1,4 @@
-/* Overlay del modal */
+/* Modal overlay */
 #subscribe-overlay {
     position: fixed;
     top: 0;
@@ -12,11 +12,12 @@
     z-index: 10000;
 }
 
+/* Subscribe text */
 #text-suscribete{
     color: #004080;
 }
 
-/* Modal */
+/* Subscribe modal window */
 .subscribe-modal {
     background: #fff;
     padding: 25px;
@@ -26,17 +27,17 @@
     max-width: 350px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.3);
     animation: fadeIn 0.4s ease;
-    box-sizing: border-box; /* Asegura que padding no rompa el diseño */
+    box-sizing: border-box; /* Ensures padding does not break layout */
 }
 
-/* Input del email */
+/* Email input field */
 .subscribe-modal input[type="email"] {
-    width: calc(100% - 20px); /* Deja espacio en los lados */
+    width: calc(100% - 20px); /* Leaves space on the sides */
     padding: 12px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    margin: 0 auto 15px auto; /* Centrado */
+    margin: 0 auto 15px auto; /* Centered */
     display: block;
     outline: none;
     transition: 0.3s;
@@ -46,7 +47,7 @@
     border-color: #004080;
     box-shadow: 0 0 8px rgba(0,64,128,0.2);
 }
-/* Botones */
+/* Buttons container */
 .subscribe-buttons {
     display: flex;
     justify-content: space-between;
@@ -67,6 +68,7 @@
 #subscribe-accept {
     background: #004080;
     color: #fff;
+    /* Accept/Subscribe button style */
 }
 
 #subscribe-accept:hover {
@@ -76,19 +78,20 @@
 #subscribe-cancel {
     background: #ccc;
     color: #333;
+    /* Cancel button style */
 }
 
 #subscribe-cancel:hover {
     background: #999;
 }
 
-/* Animación */
+/* Animation for modal appearance */
 @keyframes fadeIn {
     from { opacity: 0; transform: scale(0.9); }
     to { opacity: 1; transform: scale(1); }
 }
 
-/* Responsive */
+/* Responsive adjustments for mobile */
 @media (max-width: 480px) {
     .subscribe-modal {
         width: 95%;
